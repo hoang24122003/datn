@@ -2,5 +2,5 @@ streamlit
 pickle-mixin
 pandas
 numpy
-sklearn
+scikit-learn
 chefboost
