@@ -391,7 +391,7 @@ if options == "Năm 1":
     _max_width_()
     input_df = user_input_feature_nam_1()
 
-    score_raw = pd.read_excel('BangDiem/SinhVienNam1_clean.xlsx')
+    score_raw = pd.read_excel('BangDiem - Copy/SinhVienNam1_clean.xlsx')
     score = score_raw.drop(columns=['Xếp loại học tập'])
     df = pd.concat([input_df, score], axis=0)
 
@@ -460,7 +460,7 @@ elif options=='Năm 2':
     input_df = user_input_feature_nam_2()
     
 
-    score_raw = pd.read_excel('BangDiem/SinhVienNam2_clean.xlsx')
+    score_raw = pd.read_excel('BangDiem - Copy/SinhVienNam2_clean.xlsx')
     score = score_raw.drop(columns=['Xếp loại học tập'])
     df = pd.concat([input_df, score], axis=0)
 
@@ -555,7 +555,7 @@ elif options=='Năm 3':
     _max_width_()
     input_df = user_input_feature_nam_3()
 
-    score_raw = pd.read_excel('BangDiem/SinhVienNam3_clean.xlsx')
+    score_raw = pd.read_excel('BangDiem - Copy/SinhVienNam3_clean.xlsx')
     score = score_raw.drop(columns=['Xếp loại học tập'])
     df = pd.concat([input_df, score], axis=0)
 
