@@ -1,5 +1,5 @@
 streamlit
-pickle
+pickle-mixin
 pandas
 numpy
 sklearn
