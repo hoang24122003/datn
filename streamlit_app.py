@@ -58,7 +58,7 @@ def load_data_and_model(year, model_type):
     file_map = {
         'Năm 1': 'SinhVienNam1_clean.xlsx',
         'Năm 2': 'SinhVienNam2_clean.xlsx',
-        'Năm 3': 'SinhVienNam3_GPA_clean.xlsx'
+        'Năm 3': 'SinhVienNam3_clean.xlsx'
     }
     model_map = {
         ('Năm 1', 'Cây quyết định'): 'sinhvienn1_heso.pkl',
