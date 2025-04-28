@@ -7,7 +7,7 @@ import joblib
 # 1. Giao diện
 # ========================
 
-st.header(":blue[DỰ ĐOÁN KẾT QUẢ HỌC TẬP SINH VIÊN BẰNG GPA]")
+st.header(":blue[DỰ ĐOÁN KẾT QUẢ HỌC TẬP SINH VIÊN]")
 st.subheader('Nhập GPA theo số kỳ bạn đã học:')
 
 # Sidebar chọn kỳ hiện tại
