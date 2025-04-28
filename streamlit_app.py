@@ -47,7 +47,7 @@ if len(gpa_inputs) == 0:
     st.warning("Vui lòng nhập ít nhất 1 GPA để dự đoán!")
 else:
     # Chọn đúng model theo số lượng GPA đã nhập
-    model_name = "GPA_" + "_".join(str(i+1) for i in range(len(gpa_inputs)))
+    model_name = f"GPA_1" if len(gpa_inputs) == 1 else f"GPA_1_{len(gpa_inputs)}"
     model_path = f'LSTM_models/{model_name}.h5'
     encoder_path = f'LSTM_models/encoder_{model_name}.pkl'
 
