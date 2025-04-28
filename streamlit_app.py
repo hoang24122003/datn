@@ -8,7 +8,7 @@ import joblib
 # 1. Giao diện
 # ========================
 
-st.header(":blue[DỰ ĐOÁN KẾT QUẢ HỌC TẬP SINH VIÊN BẰNG GPA]")
+st.header(":blue[DỰ ĐOÁN KẾT QUẢ HỌC TẬP SINH VIÊN]")
 st.subheader('Nhập GPA từng kỳ học:')
 
 # Tùy chọn nhập GPA từng kỳ
