@@ -15,27 +15,27 @@ st.subheader('Nhập GPA từng kỳ học:')
 gpa_inputs = []
 col = st.sidebar
 
-GPA_1 = col.number_input('GPA kỳ 1', 0.0, 10.0, step=0.01)
+GPA_1 = col.number_input('GPA kỳ 1', 0.0, 4.0, step=0.01)
 if GPA_1 > 0:
     gpa_inputs.append(GPA_1)
 
-GPA_2 = col.number_input('GPA kỳ 2', 0.0, 10.0, step=0.01)
+GPA_2 = col.number_input('GPA kỳ 2', 0.0, 4.0, step=0.01)
 if GPA_2 > 0:
     gpa_inputs.append(GPA_2)
 
-GPA_3 = col.number_input('GPA kỳ 3', 0.0, 10.0, step=0.01)
+GPA_3 = col.number_input('GPA kỳ 3', 0.0, 4.0, step=0.01)
 if GPA_3 > 0:
     gpa_inputs.append(GPA_3)
 
-GPA_4 = col.number_input('GPA kỳ 4', 0.0, 10.0, step=0.01)
+GPA_4 = col.number_input('GPA kỳ 4', 0.0, 4.0, step=0.01)
 if GPA_4 > 0:
     gpa_inputs.append(GPA_4)
 
-GPA_5 = col.number_input('GPA kỳ 5', 0.0, 10.0, step=0.01)
+GPA_5 = col.number_input('GPA kỳ 5', 0.0, 4.0, step=0.01)
 if GPA_5 > 0:
     gpa_inputs.append(GPA_5)
 
-GPA_6 = col.number_input('GPA kỳ 6', 0.0, 10.0, step=0.01)
+GPA_6 = col.number_input('GPA kỳ 6', 0.0, 4.0, step=0.01)
 if GPA_6 > 0:
     gpa_inputs.append(GPA_6)
 
@@ -48,7 +48,7 @@ if len(gpa_inputs) == 0:
 else:
     # Chọn đúng model theo số lượng GPA đã nhập
     model_name = f"GPA_1" if len(gpa_inputs) == 1 else f"GPA_1_{len(gpa_inputs)}"
-    model_path = f'LSTM_models/{model_name}.h5'
+    model_path = f'LSTM_models/{model_name}.keras'
     encoder_path = f'LSTM_models/encoder_{model_name}.pkl'
 
     try:
