@@ -33,7 +33,7 @@ if any(g == 0.0 for g in gpa_inputs):
 else:
     # Đặt tên model đúng chuẩn
     model_name = f"GPA_1" if len(gpa_inputs) == 1 else f"GPA_1_{len(gpa_inputs)}"
-    model_path = f'LSTM_models/{model_name}.h5'
+    model_path = f'LSTM_models/{model_name}.keras'
     encoder_path = f'LSTM_models/encoder_{model_name}.pkl'
 
     try:
