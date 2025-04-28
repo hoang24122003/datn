@@ -1,4 +1,3 @@
-# Streamlit App - Dự đoán kết quả học tập bằng LSTM
 import streamlit as st
 import numpy as np
 from tensorflow.keras.models import load_model
@@ -8,36 +7,21 @@ import joblib
 # 1. Giao diện
 # ========================
 
-st.header(":blue[DỰ ĐOÁN KẾT QUẢ HỌC TẬP SINH VIÊN]")
-st.subheader('Nhập GPA từng kỳ học:')
+st.header(":blue[DỰ ĐOÁN KẾT QUẢ HỌC TẬP SINH VIÊN BẰNG GPA]")
+st.subheader('Nhập GPA theo số kỳ bạn đã học:')
 
-# Tùy chọn nhập GPA từng kỳ
+# Sidebar chọn kỳ hiện tại
+st.sidebar.subheader("Thông tin nhập liệu")
+current_semester = st.sidebar.selectbox(
+    "Chọn kỳ hiện tại:",
+    (1, 2, 3, 4, 5, 6)
+)
+
+# Sidebar nhập GPA từng kỳ
 gpa_inputs = []
-col = st.sidebar
-
-GPA_1 = col.number_input('GPA kỳ 1', 0.0, 4.0, step=0.01)
-if GPA_1 > 0:
-    gpa_inputs.append(GPA_1)
-
-GPA_2 = col.number_input('GPA kỳ 2', 0.0, 4.0, step=0.01)
-if GPA_2 > 0:
-    gpa_inputs.append(GPA_2)
-
-GPA_3 = col.number_input('GPA kỳ 3', 0.0, 4.0, step=0.01)
-if GPA_3 > 0:
-    gpa_inputs.append(GPA_3)
-
-GPA_4 = col.number_input('GPA kỳ 4', 0.0, 4.0, step=0.01)
-if GPA_4 > 0:
-    gpa_inputs.append(GPA_4)
-
-GPA_5 = col.number_input('GPA kỳ 5', 0.0, 4.0, step=0.01)
-if GPA_5 > 0:
-    gpa_inputs.append(GPA_5)
-
-GPA_6 = col.number_input('GPA kỳ 6', 0.0, 4.0, step=0.01)
-if GPA_6 > 0:
-    gpa_inputs.append(GPA_6)
+for i in range(1, current_semester + 1):
+    gpa = st.sidebar.number_input(f'GPA kỳ {i}', min_value=0.0, max_value=4.0, step=0.01)
+    gpa_inputs.append(gpa)
 
 # ========================
 # 2. Xử lý dữ liệu đầu vào
@@ -46,7 +30,7 @@ if GPA_6 > 0:
 if len(gpa_inputs) == 0:
     st.warning("Vui lòng nhập ít nhất 1 GPA để dự đoán!")
 else:
-    # Chọn đúng model theo số lượng GPA đã nhập
+    # Đặt tên model đúng chuẩn
     model_name = f"GPA_1" if len(gpa_inputs) == 1 else f"GPA_1_{len(gpa_inputs)}"
     model_path = f'LSTM_models/{model_name}.keras'
     encoder_path = f'LSTM_models/encoder_{model_name}.pkl'
